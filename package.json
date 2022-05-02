@@ -1,0 +1,19 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "API - desafio back end Alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "desafio",
+    "alura",
+    "api"
+  ],
+  "author": "Kamilla Borges",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

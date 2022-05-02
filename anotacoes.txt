@@ -1,0 +1,18 @@
+CLIENTE (NAVEGADOR)  --------------> SERVIDOR
+                    Requisição (request)
+-Chamamos o servidor quando digitamos a URL de um site-
+
+
+CLIENTE (NAVEGADOR)  <-------------- SERVIDOR
+                    Resposta (response)
+           - servidor nos retorna uma resposta -
+
+
+====== instalar o express ==========
+
+Utilizamos ele para requisições http
+
+=====================================
+
+
+
