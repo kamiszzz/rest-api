@@ -10,8 +10,13 @@ router.get('/', (req, res, next) => {
 
 // INSERE UMA CATEGORIA
 router.post('/', (req, res, next) => {
+    const categoria = {
+        titulo: req.body.titulo,
+        cor: req.body.cor
+    }
     res.status(201).send({
-        mensagem: 'Categoria inserida'
+        mensagem: 'Categoria inserida',
+        categoriaCriada: categoria
     })
 })
 

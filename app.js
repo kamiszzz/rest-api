@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 //buscando a biblioteca instalada
 
 const rotaVideos = require('./routes/videos')
@@ -8,6 +9,23 @@ const rotaCategorias = require('./routes/categorias')
 
 app.use(morgan('dev'))
 //o morgan entra na rota que foi chamada
+app.use(bodyParser.urlencoded({ extended: false})) //apenas dados simples
+app.use(bodyParser.json()) //somente formato json de entrada no body
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*') //o * significa todos || todos possuem acesso 
+    res.header(
+        'Access-Control-Allow-Header', 
+         'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+          ) // o que vamos aceitar de cabeçalho?
+
+    if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET')
+        return res.status(200).send({});
+    }
+    next();
+})
+
 app.use('/videos', rotaVideos)
 app.use('/categorias', rotaCategorias)
 

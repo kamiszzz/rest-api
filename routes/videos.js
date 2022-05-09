@@ -10,8 +10,13 @@ router.get('/', (req, res, next) => {
 
 // INSERE UM VIDEO
 router.post('/', (req, res, next) => {
+    const video = {
+        titulo: req.body.titulo,
+        descricao: req.body.descricao
+    }
     res.status(201).send({
-        mensagem: 'Video inserido'
+        mensagem: 'Video inserido',
+        videoCriado: video
     })
 })
 
